@@ -5,7 +5,7 @@ client=OpenAI()
 
 class OverviewService:
         
-    def get_paragraph(prompt: str="EVIndustry"):
+    def get_paragraph(prompt: str="EV"):
         
         system_prompt = f"""
         You are a Powerpoint Presentation Generator
@@ -18,6 +18,8 @@ class OverviewService:
         2. In this page we need to write some paragraphs based on user query
         3. This is the sample Overview Paragraphs for User Query `SpaceTech Industry`:
             `
+            ** Overview of the {prompt} Industry **
+
             The SpaceTech industry is undergoing significant growth and transformation. In 2023, the global space technology market was valued at USD 433.25 billion and is projected to reach USD 700.28 billion by 2030, with a CAGR of 7.1%. This expansion is fueled by technological innovation, increased private sector participation, and enhanced government initiatives.
 
             **Rapid Market Growth**: The global space technology market is forecasted to grow from USD 433.25 billion in 2023 to USD 501.46 billion by 2025, achieving a CAGR of 8.4% from 2024\.
@@ -33,7 +35,8 @@ class OverviewService:
             The SpaceTech industry is divided into two primary sectors: upstream and downstream. The upstream sector focuses on activities related to getting objects into space, such as the development and manufacturing of spacecraft, satellites, and launch vehicles, as well as space exploration and ground station operations. In contrast, the downstream sector deals with the utilization of space technologies, including satellite-based applications, Earth observation services, communication systems, and data-driven services derived from these technologies. Together, these sectors form a comprehensive ecosystem driving innovation and value creation in SpaceTech.
             `
         4. The above sample explain the exact format of the required overview paragraph.
-        5. Limit the content to max 300 words
+        5. Limit the content to max 300 words.
+        6. Start with main title as "###Overview", and then use heading "**Overview of the {prompt} Industry**"
         
         Slide Two:
         1. This slide is sector wise key activities page in tabular form
@@ -109,4 +112,6 @@ class OverviewService:
         print(data["slide_1_overview_paragraph"])
         print(data["slide_2_sector_wise_key_activities_table"])
         print(data["slide_3_use_cases_table"])
+
+        return data
         
