@@ -75,10 +75,10 @@ class CompetitiveLandscapeService:
                     "schema": {
                         "type": "object",
                         "properties": {
-                            "slide_1_overview": { "type": "string" },
-                            "slide_2_factors": { "type": "string" }
+                            "competitive_landscape_slide_1_overview": { "type": "string" },
+                            "competitive_landscape_slide_2_factors": { "type": "string" }
                         },
-                        "required": ["slide_1_overview", "slide_2_factors"],
+                        "required": ["competitive_landscape_slide_1_overview", "competitive_landscape_slide_2_factors"],
                         "additionalProperties": False,
                     },
                     "strict": True,
@@ -88,7 +88,7 @@ class CompetitiveLandscapeService:
         
         data = json.loads(response.choices[0].message.content)
         
-        print(data["slide_1_overview"])
-        print(data["slide_2_factors"])
+        print(data["competitive_landscape_slide_1_overview"])
+        print(data["competitive_landscape_slide_2_factors"])
         
         return data

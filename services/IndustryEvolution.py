@@ -75,11 +75,11 @@ class IndustryEvolutionService:
                     "schema": {
                         "type": "object",
                         "properties": {
-                            "slide_1_evolution_overview": { "type": "string" },
-                            "slide_2_timeline": { "type": "string" },
-                            "slide_3_future_trends": { "type": "string" },
+                            "industry_evolution_slide_1_evolution_overview": { "type": "string" },
+                            "industry_evolution_slide_2_timeline": { "type": "string" },
+                            "industry_evolution_slide_3_future_trends": { "type": "string" },
                         },
-                    "required": ["slide_1_evolution_overview", "slide_2_timeline", "slide_3_future_trends"],
+                    "required": ["industry_evolution_slide_1_evolution_overview", "industry_evolution_slide_2_timeline", "industry_evolution_slide_3_future_trends"],
                         "additionalProperties": False,
                     },
                     "strict": True,
@@ -89,8 +89,8 @@ class IndustryEvolutionService:
         
         data = json.loads(response.choices[0].message.content)
         
-        print(data["slide_1_evolution_overview"])
-        print(data["slide_2_timeline"])
-        print(data["slide_3_future_trends"])
+        print(data["industry_evolution_slide_1_evolution_overview"])
+        print(data["industry_evolution_slide_2_timeline"])
+        print(data["industry_evolution_slide_3_future_trends"])
         
         return data

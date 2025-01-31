@@ -77,9 +77,9 @@ class IndustryKpiService:
                     "schema":{
                         "type": "object",
                         "properties": {
-                            "slide_1_industry_kpi_table":{ "type" : "string"}
+                            "industry_kpi_slide_1_industry_kpi_table":{ "type" : "string"}
                         },
-                        "required" : ["slide_1_industry_kpi_table"],
+                        "required" : ["industry_kpi_slide_1_industry_kpi_table"],
                         "additionalProperties": False,
                     },
                     "strict":True,
@@ -89,6 +89,6 @@ class IndustryKpiService:
         
         data = json.loads(response.choices[0].message.content)
         
-        print(data["slide_1_industry_kpi_table"]);
+        print(data["industry_kpi_slide_1_industry_kpi_table"]);
 
         return data

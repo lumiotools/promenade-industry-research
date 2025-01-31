@@ -104,11 +104,11 @@ class DistributionService:
                     "schema": {
                         "type": "object",
                         "properties": {
-                            "slide_1_end_customers": { "type": "string" },
-                            "slide_2_distribution_models_and_partners": { "type": "string" },
-                            "slide_3_emerging_channels": { "type": "string" },
+                            "distribution_slide_1_end_customers": { "type": "string" },
+                            "distribution_slide_2_distribution_models_and_partners": { "type": "string" },
+                            "distribution_slide_3_emerging_channels": { "type": "string" },
                         },
-                        "required": ["slide_1_end_customers", "slide_2_distribution_models_and_partners", "slide_3_emerging_channels"],
+                        "required": ["distribution_slide_1_end_customers", "distribution_slide_2_distribution_models_and_partners", "distribution_slide_3_emerging_channels"],
                         "additionalProperties": False,
                     },
                     "strict": True,
@@ -118,8 +118,8 @@ class DistributionService:
         
         data = json.loads(response.choices[0].message.content)
         
-        print(data["slide_1_end_customers"])
-        print(data["slide_2_distribution_models_and_partners"])
-        print(data["slide_3_emerging_channels"])
+        print(data["distribution_slide_1_end_customers"])
+        print(data["distribution_slide_2_distribution_models_and_partners"])
+        print(data["distribution_slide_3_emerging_channels"])
         
         return data

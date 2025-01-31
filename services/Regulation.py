@@ -92,15 +92,15 @@ class RegulationService:
             response_format={
                 "type": "json_schema",
                 "json_schema": {
-                    "name": "regulation_slides",
+                    "name": "regulation_sildes",
                     "schema": {
                         "type": "object",
                         "properties": {
-                            "slide_1_regulatory_bodies": { "type": "string" },
-                            "slide_2_key_regulations": { "type": "string" },
-                            "slide_3_licensing_requirements": { "type": "string" },
+                            "regulation_silde_1_regulatory_bodies": { "type": "string" },
+                            "regulation_silde_2_key_regulations": { "type": "string" },
+                            "regulation_silde_3_licensing_requirements": { "type": "string" },
                         },
-                    "required": ["slide_1_regulatory_bodies", "slide_2_key_regulations", "slide_3_licensing_requirements"],
+                    "required": ["regulation_silde_1_regulatory_bodies", "regulation_silde_2_key_regulations", "regulation_silde_3_licensing_requirements"],
                         "additionalProperties": False,
                     },
                     "strict": True,
@@ -110,8 +110,8 @@ class RegulationService:
         
         data = json.loads(response.choices[0].message.content)
         
-        print(data["slide_1_regulatory_bodies"])
-        print(data["slide_2_key_regulations"])
-        print(data["slide_3_licensing_requirements"])
+        print(data["regulation_silde_1_regulatory_bodies"])
+        print(data["regulation_silde_2_key_regulations"])
+        print(data["regulation_silde_3_licensing_requirements"])
         
         return data

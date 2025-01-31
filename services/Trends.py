@@ -88,11 +88,11 @@ class TrendsService:
                     "schema": {
                         "type": "object",
                         "properties": {
-                            "slide_1_recent_trends": { "type": "string" },
-                            "slide_2_expansion_services": { "type": "string" },
-                            "slide_3_industry_categories": { "type": "string" },
+                            "trends_slide_1_recent_trends": { "type": "string" },
+                            "trends_slide_2_expansion_services": { "type": "string" },
+                            "trends_slide_3_industry_categories": { "type": "string" },
                         },
-                    "required": ["slide_1_recent_trends", "slide_2_expansion_services", "slide_3_industry_categories"],
+                    "required": ["trends_slide_1_recent_trends", "trends_slide_2_expansion_services", "trends_slide_3_industry_categories"],
                         "additionalProperties": False,
                     },
                     "strict": True,
@@ -102,8 +102,8 @@ class TrendsService:
         
         data = json.loads(response.choices[0].message.content)
         
-        print(data["slide_1_recent_trends"])
-        print(data["slide_2_expansion_services"])
-        print(data["slide_3_industry_categories"])
+        print(data["trends_slide_1_recent_trends"])
+        print(data["trends_slide_2_expansion_services"])
+        print(data["trends_slide_3_industry_categories"])
         
         return data

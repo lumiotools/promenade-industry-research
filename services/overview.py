@@ -98,11 +98,11 @@ class OverviewService:
                 "schema": {
                     "type": "object",
                     "properties": {
-                        "slide_1_overview_paragraph": { "type": "string" },
-                        "slide_2_sector_wise_key_activities_table": { "type": "string" },
-                        "slide_3_use_cases_table": { "type": "string" },
+                        "overview_slide_1_overview_paragraph": { "type": "string" },
+                        "overview_slide_2_sector_wise_key_activities_table": { "type": "string" },
+                        "overview_slide_3_use_cases_table": { "type": "string" },
                     },
-                    "required": ["slide_1_overview_paragraph", "slide_2_sector_wise_key_activities_table", "slide_3_use_cases_table"],
+                    "required": ["overview_slide_1_overview_paragraph", "overview_slide_2_sector_wise_key_activities_table", "overview_slide_3_use_cases_table"],
                     "additionalProperties": False,
                 },
                 "strict": True,
@@ -112,9 +112,9 @@ class OverviewService:
         
         data = json.loads(response.choices[0].message.content)
         
-        print(data["slide_1_overview_paragraph"])
-        print(data["slide_2_sector_wise_key_activities_table"])
-        print(data["slide_3_use_cases_table"])
+        print(data["overview_slide_1_overview_paragraph"])
+        print(data["overview_slide_2_sector_wise_key_activities_table"])
+        print(data["overview_slide_3_use_cases_table"])
 
         return data
         

@@ -242,30 +242,30 @@ class MarketService:
                    "schema":{
                        "type": "object",
                        "properties": {
-                           "slide_1_overview_paragraph": {
+                           "market_slide_1_overview_paragraph": {
                                "type": "string"
                            },
-                           "slide_2_sector_wise_key_activities_table": { "type": "string" },
-                           "slide_3_major_segment":{
+                           "market_slide_2_sector_wise_key_activities_table": { "type": "string" },
+                           "market_slide_3_major_segment":{
                                "type": "string"
                            },
-                           "slide_4_market_segment_table":{
+                           "market_slide_4_market_segment_table":{
                                "type": "string"
                            },
-                           "slide_5_core_technology":{
+                           "market_slide_5_core_technology":{
                                "type": "string"
                            },
-                           "slide_6_category_description":{
+                           "market_slide_6_category_description":{
                                "type": "string"
                            },
-                           "slide_7_application_table":{
+                           "market_slide_7_application_table":{
                                "type": "string"
                            },
-                           "slide_8_end_users_table":{
+                           "market_slide_8_end_users_table":{
                                "type": "string"
                            }
                        },
-                       "required":["slide_1_overview_paragraph","slide_2_sector_wise_key_activities_table","slide_3_major_segment","slide_4_market_segment_table","slide_5_core_technology","slide_6_category_description","slide_7_application_table","slide_8_end_users_table"],
+                       "required":["market_slide_1_overview_paragraph","market_slide_2_sector_wise_key_activities_table","market_slide_3_major_segment","market_slide_4_market_segment_table","market_slide_5_core_technology","market_slide_6_category_description","market_slide_7_application_table","market_slide_8_end_users_table"],
                        "additionalProperties": False,
                    },
                    "strict": True,
@@ -275,14 +275,14 @@ class MarketService:
         
         data = json.loads(response2.choices[0].message.content)
         
-        print(data["slide_1_overview_paragraph"])
-        print(data["slide_2_sector_wise_key_activities_table"])
-        print(data["slide_3_major_segment"])
-        print(data["slide_4_market_segment_table"])
-        print(data["slide_5_core_technology"])
-        print(data["slide_6_category_description"])
-        print(data["slide_7_application_table"])
-        print(data["slide_8_end_users_table"])
+        print(data["market_slide_1_overview_paragraph"])
+        print(data["market_slide_2_sector_wise_key_activities_table"])
+        print(data["market_slide_3_major_segment"])
+        print(data["market_slide_4_market_segment_table"])
+        print(data["market_slide_5_core_technology"])
+        print(data["market_slide_6_category_description"])
+        print(data["market_slide_7_application_table"])
+        print(data["market_slide_8_end_users_table"])
 
         return data
         

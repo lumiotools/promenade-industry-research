@@ -14,12 +14,11 @@ class ValueChainService:
         Ensure that the markdown is correctly formatted with all gaps and layout, including line breaks. 
         All tables and charts must be displayed correctly, and all headings and their subheadings should be accurate.
         
-        The slide should:
-        1. Start with the title "### {prompt} Industry Value Chain and Operations**"
-        2. Follow with a brief introductory paragraph explaining the five key segments
-        3. Then provide detailed descriptions of each segment on new lines with two spaces for line breaks
-        4. End with a concluding statement about how these segments work together
-        5. Use this exact format:
+        The slide one should:
+        1. Follow with a brief introductory paragraph explaining the five key segments
+        2. Then provide detailed descriptions of each segment on new lines with two spaces for line breaks
+        3. End with a concluding statement about how these segments work together
+        4. Use this exact format:
         
         **{prompt} Industry Value Chain and Operations**
 
@@ -56,9 +55,9 @@ class ValueChainService:
                         "schema": {
                             "type": "object",
                             "properties": {
-                                "slide_content": { "type": "string" }
+                                "value_chain_slide_1_value_chain": { "type": "string" }
                             },
-                            "required": ["slide_content"],
+                            "required": ["value_chain_slide_1_value_chain"],
                             "additionalProperties": False,
                         },
                         "strict": True,
@@ -67,8 +66,8 @@ class ValueChainService:
             )
             
             data = json.loads(response.choices[0].message.content)
-            print(data["slide_content"])
-            return data["slide_content"]
+            print(data["value_chain_slide_1_value_chain"])
+            return data["value_chain_slide_1_value_chain"]
             
         except Exception as e:
             print(f"Error generating content: {str(e)}")

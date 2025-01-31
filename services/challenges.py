@@ -62,9 +62,9 @@ class ChallengesService:
                 "schema": {
                     "type": "object",
                     "properties": {
-                        "slide_1_challenges_and_opportunities_paragraph": { "type": "string" },
+                        "challenges_slide_1_challenges_and_opportunities_paragraph": { "type": "string" },
                     },
-                    "required": ["slide_1_challenges_and_opportunities_paragraph"],
+                    "required": ["challenges_slide_1_challenges_and_opportunities_paragraph"],
                     "additionalProperties": False,
                 },
                 "strict": True,
@@ -74,6 +74,6 @@ class ChallengesService:
         
         data = json.loads(response.choices[0].message.content)
         
-        print(data["slide_1_challenges_and_opportunities_paragraph"])
+        print(data["challenges_slide_1_challenges_and_opportunities_paragraph"])
 
         return data
