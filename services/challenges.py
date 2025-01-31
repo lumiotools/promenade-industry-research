@@ -36,7 +36,8 @@ class ChallengesService:
         
         4. The above sample explain the exact format of the required challenges and opportunities paragraph.
         5. Limit the content to max 200 words
-        6. Start with main title as "### Challenges and Opportunities" for complete slides. 
+        6. Start with main title as "# Challenges and Opportunities" for complete slides. 
+        7. Use "### Subheading" for any subheadings in the content.
         """
         
         user_prompt=f"""

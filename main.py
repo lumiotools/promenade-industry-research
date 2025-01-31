@@ -21,10 +21,10 @@ async def root():
 
 if __name__ == "__main__":
     # uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
-    OverviewService.get_paragraph()
+    # OverviewService.get_paragraph()
     # MarketService.get_paragraph()
     # IndustryEvolutionService.get_evolution_content()
-    # CompetitiveLandscapeService.get_slides()
+    CompetitiveLandscapeService.get_slides()
     # IndustryEvolutionService.get_evolution_content()
     # ValueChainService.get_paragraph()
     # DistributionService.get_paragraph()

@@ -17,7 +17,7 @@ class IndustryEvolutionService:
         
         Slide One:
         1. This slide is about industry evolution overview
-        2. Start with main title as "### {prompt} Industry Evolution and Key Milestones"
+        2. Start with main title as "# {prompt} Industry Evolution and Key Milestones"
         3. Write a comprehensive paragraph about the industry's evolution through different eras
         4. Use this format for the regulatory bodies content:
         `
@@ -39,7 +39,7 @@ class IndustryEvolutionService:
         1. This slide focuses on future trends
         2. Use this format for the future trends content:
         `
-        **Future Trends in the {prompt} Industry**
+        ### Future Trends in the {prompt} Industry
 
         | Trend Category | Description | Expected Impact |
         | :---- | :---- | :---- |

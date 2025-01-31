@@ -20,7 +20,7 @@ class ValueChainService:
         3. End with a concluding statement about how these segments work together
         4. Use this exact format:
         
-        **{prompt} Industry Value Chain and Operations**
+        # {prompt} Industry Value Chain and Operations
 
         The {prompt} industry value chain encompasses five key segments: Research and Development (R&D), Manufacturing and Assembly, Launch Services, Satellite Operations, and End-User Support and Services.
 

@@ -51,7 +51,7 @@ class IndustryKpiService:
         `
         
        4. The above sample explain the exact format of the required Industry KPIs table.
-       5. Start with main title as "### Industry KPIs" for complete slides. 
+       5. Start with main title as "# Industry KPIs" for complete slides. 
         """
         
         user_prompt = f"""

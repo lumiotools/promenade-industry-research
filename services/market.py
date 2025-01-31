@@ -32,14 +32,14 @@ class MarketService:
 
             **Investment**: Average investment value of USD 61.5 million per funding round
 
-            **Key Components of SpaceTech**
+            ### Key Components of SpaceTech
 
             The SpaceTech industry is divided into two primary sectors: upstream and downstream. The upstream sector focuses on activities related to getting objects into space, such as the development and manufacturing of spacecraft, satellites, and launch vehicles, as well as space exploration and ground station operations. In contrast, the downstream sector deals with the utilization of space technologies, including satellite-based applications, Earth observation services, communication systems, and data-driven services derived from these technologies. Together, these sectors form a comprehensive ecosystem driving innovation and value creation in SpaceTech.
         `
         
-        4.  4. The above sample explain the exact format of the required Industry Market Size & Structure paragraph.
+        4. The above sample explain the exact format of the required Industry Market Size & Structure paragraph.
         5. Limit the content to max 300 words
-        6. Start with main title as "### Industry Market Size & Structure"
+        6. Start with main title as "# Industry Market Size & Structure"
         Industry Market Size & Structure
         
         Slide Two:
@@ -61,7 +61,7 @@ class MarketService:
         2. In this slide we need some major segments within the spacetech industry based on user query
         3. This is the sample Major Segments within the Spacetech Industry for User Query `SpaceTech Industry`:
         `
-            **Major Segments within the SpaceTech Industry**
+            ### Major Segments within the SpaceTech Industry
 
             **Space Services**: This segment focuses on providing various services supporting space-related technologies and infrastructure. It includes:
 
@@ -95,7 +95,7 @@ class MarketService:
         2. In this slide we need some tabular data based on user query
         3. This is the sample Market Segments for User Query `SpaceTech Industry`:
         `
-            **Market Segments**
+            ### Market Segments
 
             | Category | Description |
             | :---- | :---- |
@@ -114,7 +114,7 @@ class MarketService:
         2. In this page we need to write some paragraphs based on user query
         3. This is the sample Core Technology Area for User Query `SpaceTech Industry`:
         `
-            **Core Technology Areas**
+            ### Core Technology Areas
 
             The SpaceTech industry plays a critical role in enabling essential everyday services, such as weather forecasting, satellite navigation systems, remote sensing, and long-distance communications. Beyond these applications, it drives advancements in scientific research, supporting discoveries in astronomy and Earth sciences. Far from being limited to traditional space exploration, the industry integrates cutting-edge technologies from various fields, including robotics, artificial intelligence, materials science, and advanced manufacturing. This multidisciplinary approach not only expands the possibilities of space exploration but also enhances its impact on life here on Earth.
         `
@@ -145,7 +145,7 @@ class MarketService:
         2. In this slide we need some tabular data based on user query
         3. This is the sample application for User Query `SpaceTech Industry`:
         `
-            **Applications**
+            ### Applications
 
             | Category | Description |
             | :---- | :---- |
@@ -162,7 +162,7 @@ class MarketService:
         2. In this slide we need some tabular data based on user query
         3. This is the sample end users for User Query `SpaceTech Industry`:
         `
-            **End Users**
+            ### End Users
 
             | Category | Description |
             | :---- | :---- |

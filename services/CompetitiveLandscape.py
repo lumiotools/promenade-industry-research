@@ -18,7 +18,7 @@ class CompetitiveLandscapeService:
         
         Slide One Format:
         `
-        ### Competitive Landscape
+        # Competitive Landscape
 
         **Established Aerospace Companies**: Traditional players like Boeing, Lockheed Martin, and Airbus SE continue to hold significant market share.
 
@@ -39,7 +39,7 @@ class CompetitiveLandscapeService:
 
         Slide Two Format:
         `
-        **Competitive Factors**
+        ### Competitive Factors
 
         | Factor | Description |
         | :---- | :---- |

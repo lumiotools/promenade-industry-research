@@ -17,10 +17,10 @@ class RegulationService:
         
         Slide One:
         1. This slide is about regulations and regulatory bodies
-        2. Start with main title as "### Regulation"
+        2. Start with main title as "# Regulation"
         3. Use this format for the regulatory bodies content:
         `
-        **{prompt} Industry Regulatory Bodies**
+        ### {prompt} Industry Regulatory Bodies
 
         | Organization | Responsibility |
         | :---- | :---- |
@@ -34,7 +34,7 @@ class RegulationService:
         1. This slide is about key regulations
         2. Use this format for the key regulations content:
         `
-        **Key Regulations for the {prompt} Industry**
+        ### Key Regulations for the {prompt} Industry
 
         | Policy/Regulation | Description |
         | :---- | :---- |
@@ -52,7 +52,7 @@ class RegulationService:
         1. This slide is about licensing requirements
         2. Use this format for the licensing requirements content:
         `
-        **Licensing Requirements and Compliance in the {prompt} Industry**
+        ### Licensing Requirements and Compliance in the {prompt} Industry
 
         **Federal Aviation Administration (FAA)**:
         Vehicle Operator License: Required for launches or re-entries using the same vehicle or family of vehicles.
