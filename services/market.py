@@ -109,38 +109,7 @@ class MarketService:
         
         4. The above sample explain the exact format of the required market segments table.
         
-        Slide Five:
-        1. This slide is Core Technology Area page.
-        2. In this page we need to write some paragraphs based on user query
-        3. This is the sample Core Technology Area for User Query `SpaceTech Industry`:
-        `
-            ### Core Technology Areas
-
-            The SpaceTech industry plays a critical role in enabling essential everyday services, such as weather forecasting, satellite navigation systems, remote sensing, and long-distance communications. Beyond these applications, it drives advancements in scientific research, supporting discoveries in astronomy and Earth sciences. Far from being limited to traditional space exploration, the industry integrates cutting-edge technologies from various fields, including robotics, artificial intelligence, materials science, and advanced manufacturing. This multidisciplinary approach not only expands the possibilities of space exploration but also enhances its impact on life here on Earth.
-        `
-        
-        4. The above sample explain the exact format of the required core technology area paragraph.
-        5. Limit the content to max 100 words
-        
-        Slide Six:
-        1. This slide is category description page in tabular form
-        2. In this slide we need some tabular data based on user query
-        3. This is the sample Category Description for User Query `SpaceTech Industry`:
-        `
-            | Category | Description |
-            | :---- | :---- |
-            | **Spacecraft and Satellites** | Vehicles and devices designed for space missions, including communication, observation, and research. |
-            | **Space Vehicles** | Vehicles used for crewed and uncrewed space exploration and travel, such as space shuttles and landers. |
-            | **Orbital Launch Vehicles** | Rockets designed to carry payloads into Earth's orbit or beyond, including reusable rockets. |
-            | **Deep-Space Communication** | Technologies and systems enabling communication with spacecraft over long distances, essential for exploration. |
-            | **In-Space Propulsion** | Propulsion systems designed for maneuvering and travel within space, including ion thrusters and chemical rockets. |
-            | **Space Habitats** | Structures designed for human habitation in space, such as space stations and lunar bases. |
-            | **Specialized Manufacturing Processes** | Advanced manufacturing techniques, including 3D printing and microgravity production, tailored for space applications. | 
-        `
-        
-        4. The above sample explain the exact format of the required category description table.
-        
-        Slide Seven: 
+        Slide Five: 
         1. This slide is application page in tabular form
         2. In this slide we need some tabular data based on user query
         3. This is the sample application for User Query `SpaceTech Industry`:
@@ -157,7 +126,7 @@ class MarketService:
         
         4. The above sample explain the exact format of the required application table.
         
-        Slide Eight:
+        Slide Six:
         1. This slide is end users page in tabular form
         2. In this slide we need some tabular data based on user query
         3. This is the sample end users for User Query `SpaceTech Industry`:
@@ -173,6 +142,29 @@ class MarketService:
         `
         
         4. The above sample explain the exact format of the required end users table.
+
+        Slide Seven:
+        1. This slide is Core Technology Areas and Category Descriptions.
+        2. In this slide we need to write some paragraphs and tabular data based on user query.
+        
+        ### Core Technology Areas
+
+        The SpaceTech industry plays a critical role in enabling essential everyday services, such as weather forecasting, satellite navigation systems, remote sensing, and long-distance communications. Beyond these applications, it drives advancements in scientific research, supporting discoveries in astronomy and Earth sciences. Far from being limited to traditional space exploration, the industry integrates cutting-edge technologies from various fields, including robotics, artificial intelligence, materials science, and advanced manufacturing. This multidisciplinary approach not only expands the possibilities of space exploration but also enhances its impact on life here on Earth.
+
+        ### Category Description
+
+        | Category | Description |
+        | :---- | :---- |
+        | **Spacecraft and Satellites** | Vehicles and devices designed for space missions, including communication, observation, and research. |
+        | **Space Vehicles** | Vehicles used for crewed and uncrewed space exploration and travel, such as space shuttles and landers. |
+        | **Orbital Launch Vehicles** | Rockets designed to carry payloads into Earth's orbit or beyond, including reusable rockets. |
+        | **Deep-Space Communication** | Technologies and systems enabling communication with spacecraft over long distances, essential for exploration. |
+        | **In-Space Propulsion** | Propulsion systems designed for maneuvering and travel within space, including ion thrusters and chemical rockets. |
+        | **Space Habitats** | Structures designed for human habitation in space, such as space stations and lunar bases. |
+        | **Specialized Manufacturing Processes** | Advanced manufacturing techniques, including 3D printing and microgravity production, tailored for space applications. | 
+
+        4. The above sample explain the exact format of the required category description table.
+
         """
         
         # system_prompt2=f"""
@@ -252,20 +244,18 @@ class MarketService:
                            "market_slide_4_market_segment_table":{
                                "type": "string"
                            },
-                           "market_slide_5_core_technology":{
+                            "market_slide_5_application_table":{
                                "type": "string"
                            },
-                           "market_slide_6_category_description":{
+                           "market_slide_6_end_users_table":{
                                "type": "string"
                            },
-                           "market_slide_7_application_table":{
-                               "type": "string"
-                           },
-                           "market_slide_8_end_users_table":{
+                           "market_slide_7_core_technology":{
                                "type": "string"
                            }
+                 
                        },
-                       "required":["market_slide_1_overview_paragraph","market_slide_2_sector_wise_key_activities_table","market_slide_3_major_segment","market_slide_4_market_segment_table","market_slide_5_core_technology","market_slide_6_category_description","market_slide_7_application_table","market_slide_8_end_users_table"],
+                       "required":["market_slide_1_overview_paragraph","market_slide_2_sector_wise_key_activities_table","market_slide_3_major_segment","market_slide_4_market_segment_table","market_slide_7_core_technology","market_slide_5_application_table","market_slide_6_end_users_table"],
                        "additionalProperties": False,
                    },
                    "strict": True,
@@ -279,10 +269,9 @@ class MarketService:
         print(data["market_slide_2_sector_wise_key_activities_table"])
         print(data["market_slide_3_major_segment"])
         print(data["market_slide_4_market_segment_table"])
-        print(data["market_slide_5_core_technology"])
-        print(data["market_slide_6_category_description"])
-        print(data["market_slide_7_application_table"])
-        print(data["market_slide_8_end_users_table"])
+        print(data["market_slide_5_application_table"])
+        print(data["market_slide_6_end_users_table"])
+        print(data["market_slide_7_core_technology"])
 
         return data
         

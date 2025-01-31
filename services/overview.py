@@ -47,9 +47,9 @@ class OverviewService:
         3. This is the sample Sector wise key activities for User Query `SpaceTech Industry`:
         `
         | Sector | Key Activities |
-        | :---- | :---- |
-        | **Upstream Sector** | \- Transportation of objects into space \- Ground stations \- Space exploration \- Manufacturing of spacecraft, satellites, and launch vehicles |
-        | **Downstream Sector** | \- Data and services derived from space technologies \- Satellite-based applications \- Earth observation services \- Communication systems |
+| :---- | :---- |
+| **Upstream Sector** | \- Transportation of objects into space<br> - Ground stations<br> - Space exploration<br> - Manufacturing of spacecraft, satellites, and launch vehicles |
+| **Downstream Sector** | \- Data and services derived from space technologies<br> - Satellite-based applications<br> - Earth observation services<br> - Communication systems |
         `
         4. The above sample explain the exact format of the required sector wise key activities table.
         
@@ -58,6 +58,8 @@ class OverviewService:
         2. In this slide we need some use cases based on user query
         3. This is the sample Use Cases for User Query `SpaceTech Industry`:
         `
+        ### Use cases
+
         SpaceTech is used across the following use cases:
 
         | Application Area | Description |

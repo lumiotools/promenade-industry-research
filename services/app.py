@@ -32,27 +32,28 @@ def generate_presentation(prompt: str = "EV") -> list:
     slides.append(market_data["market_slide_2_sector_wise_key_activities_table"])
     slides.append(market_data["market_slide_3_major_segment"])
     slides.append(market_data["market_slide_4_market_segment_table"])
-    slides.append(market_data["market_slide_5_core_technology"])
-    slides.append(market_data["market_slide_6_category_description"])
-    slides.append(market_data["market_slide_7_application_table"])
-    slides.append(market_data["market_slide_8_end_users_table"])
+    slides.append(market_data["market_slide_5_application_table"])
+    slides.append(market_data["market_slide_6_end_users_table"])
+    slides.append(market_data["market_slide_7_core_technology"])
 
-    challenges_data = ChallengesService.get_paragraph(prompt)
-    slides.append(challenges_data["challenges_slide_1_challenges_and_opportunities_paragraph"])
+    evolution_data = IndustryEvolutionService.get_evolution_content(prompt)
+    slides.append(evolution_data["industry_evolution_slide_1_evolution_overview"] + "\n\n" +   evolution_data["industry_evolution_slide_2_timeline"]) 
+    slides.append(evolution_data["industry_evolution_slide_3_future_trends"])
 
     competitive_landscape_data = CompetitiveLandscapeService.get_slides(prompt)
     slides.append(competitive_landscape_data["competitive_landscape_slide_1_overview"])
     slides.append(competitive_landscape_data["competitive_landscape_slide_2_factors"])
+
+    value_chain_data = ValueChainService.get_paragraph(prompt)
+    slides.append(value_chain_data)
 
     distribution_data = DistributionService.get_paragraph(prompt)
     slides.append(distribution_data["distribution_slide_1_end_customers"])
     slides.append(distribution_data["distribution_slide_2_distribution_models_and_partners"])
     slides.append(distribution_data["distribution_slide_3_emerging_channels"])
 
-    evolution_data = IndustryEvolutionService.get_evolution_content(prompt)
-    slides.append(evolution_data["industry_evolution_slide_1_evolution_overview"])
-    slides.append(evolution_data["industry_evolution_slide_2_timeline"])
-    slides.append(evolution_data["industry_evolution_slide_3_future_trends"])
+    challenges_data = ChallengesService.get_paragraph(prompt)
+    slides.append(challenges_data["challenges_slide_1_challenges_and_opportunities_paragraph"])
 
     kpi_data = IndustryKpiService.generate_tabular(prompt)
     slides.append(kpi_data["industry_kpi_slide_1_industry_kpi_table"])
@@ -67,10 +68,7 @@ def generate_presentation(prompt: str = "EV") -> list:
     slides.append(trends_data["trends_slide_2_expansion_services"])
     slides.append(trends_data["trends_slide_3_industry_categories"])
 
-    value_chain_data = ValueChainService.get_paragraph(prompt)
-    slides.append(value_chain_data)
-
-    assert len(slides) == 28, f"Expected 28 slides, but got {len(slides)}"
+    assert len(slides) == 26, f"Expected 28 slides, but got {len(slides)}"
 
     return slides
 
@@ -82,19 +80,13 @@ def create_marp_markdown(slides: list, industry_name: str):
     """
     marp_header = """---
 marp: true
-theme: gaia
 paginate: true
-backgroundColor: white
 ---
 
 <style>
 section {
     font-size: 16px;
     padding: 20px;
-}
-h1 {
-    font-size: 28px;
-    margin-bottom: 20px;
 }
 </style>
 """
@@ -114,7 +106,7 @@ h1 {
 
 # Example usage
 if __name__ == "__main__":
-    prompt = "SpaceTech Industry"
+    prompt = "Food"
     presentation_slides = generate_presentation(prompt)
 
     with open(f"{prompt}_slides.json", "w") as json_file:

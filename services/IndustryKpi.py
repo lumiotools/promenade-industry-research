@@ -37,7 +37,7 @@ class IndustryKpiService:
         |  | Propulsion Efficiency | Monitors advancements in fuel efficiency and sustainability for propulsion systems. |
         |  | Orbital Accuracy | Precision in satellite deployment and positioning. |
         | Customer and Market KPIs | Customer Acquisition Rate | Growth of commercial clients, such as telecom companies or government contracts. |
-        |  | Market Share | Measures the company’s share in specific SpaceTech sectors. |
+        |  | Market Share | Measures the company's share in specific SpaceTech sectors. |
         |  | Customer Satisfaction Score (CSAT) | Reflects client satisfaction with services like satellite data or launch reliability. |
         |  | Service Latency | Time taken to deliver data or services to end-users. |
         | Sustainability and Risk KPIs | Space Debris Mitigation Compliance | Adherence to debris mitigation guidelines. |
@@ -52,6 +52,7 @@ class IndustryKpiService:
         
        4. The above sample explain the exact format of the required Industry KPIs table.
        5. Start with main title as "# Industry KPIs" for complete slides. 
+       6. Give me a maximum of 4 Categories and for each categories a maximum of 4 KPIs
         """
         
         user_prompt = f"""
