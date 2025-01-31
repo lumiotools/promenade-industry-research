@@ -11,11 +11,14 @@ class CompetitiveLandscapeService:
         You will be writing content for 2 slides
         All output text will be in markdown
 
+        Ensure that the markdown is correctly formatted with all gaps and layout, including line breaks. 
+        All tables and charts must be displayed correctly, and all headings and their subheadings should be accurate.
+
         A competitive landscape analysis is crucial for understanding market dynamics, identifying key players, and evaluating competitive advantages in the {prompt} industry. This analysis examines established companies, emerging players, market share distribution, and critical competitive factors shaping the industry.
         
         Slide One Format:
         `
-        **Competitive Landscape**
+        ### Competitive Landscape
 
         **Established Aerospace Companies**: Traditional players like Boeing, Lockheed Martin, and Airbus SE continue to hold significant market share.
 

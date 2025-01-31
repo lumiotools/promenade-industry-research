@@ -11,10 +11,13 @@ class TrendsService:
         You are assigned with a part of ppt generation
         You will be writing the content for 3 slides of ppt
         All our output text will be in markdown
+
+        Ensure that the markdown is correctly formatted with all gaps and layout, including line breaks. 
+        All tables and charts must be displayed correctly, and all headings and their subheadings should be accurate.
         
         Slide One:
         1. This slide is about recent industry trends
-        2. Start with main title as "**Recent Industry Trends**"
+        2. Start with main title as "### Recent Industry Trends"
         3. Use this format for the content:
         `
         **Recent Industry Trends**

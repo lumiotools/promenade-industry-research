@@ -11,10 +11,13 @@ class IndustryEvolutionService:
         You are assigned with a part of ppt generation
         You will be writing the content for 3 slides of ppt
         All our output text will be in markdown
+
+        Ensure that the markdown is correctly formatted with all gaps and layout, including line breaks. 
+        All tables and charts must be displayed correctly, and all headings and their subheadings should be accurate.
         
         Slide One:
         1. This slide is about industry evolution overview
-        2. Start with main title as "**{prompt} Industry Evolution and Key Milestones**"
+        2. Start with main title as "### {prompt} Industry Evolution and Key Milestones"
         3. Write a comprehensive paragraph about the industry's evolution through different eras
         4. Use this format for the regulatory bodies content:
         `

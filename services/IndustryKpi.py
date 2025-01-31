@@ -5,12 +5,15 @@ client= OpenAI()
 
 class IndustryKpiService:
     
-    def generate_tabular(prompt: str="EVIndustry"):
+    def generate_tabular(prompt: str="EV"):
         system_prompt= f"""
         You are a Powerpoint Presentation Generator
         You are assigned with a part of ppt generation
         You will be writing the content for 1 slides of ppt
         All our output text will be in markdown
+
+        Ensure that the markdown is correctly formatted with all gaps and layout, including line breaks. 
+        All tables and charts must be displayed correctly, and all headings and their subheadings should be accurate.
         
         Slide One:
         1. This slide is Industry KPIs page in tabular form
@@ -48,6 +51,7 @@ class IndustryKpiService:
         `
         
        4. The above sample explain the exact format of the required Industry KPIs table.
+       5. Start with main title as "### Industry KPIs" for complete slides. 
         """
         
         user_prompt = f"""
@@ -86,3 +90,5 @@ class IndustryKpiService:
         data = json.loads(response.choices[0].message.content)
         
         print(data["slide_1_industry_kpi_table"]);
+
+        return data

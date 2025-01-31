@@ -13,6 +13,9 @@ class OverviewService:
         You will be writing the content for 3 slides of ppt
         All our output text will be in markdown
         
+        Ensure that the markdown is correctly formatted with all gaps and layout, including line breaks. 
+        All tables and charts must be displayed correctly, and all headings and their subheadings should be accurate.
+
         Slide One:
         1. This slide is an overview page
         2. In this page we need to write some paragraphs based on user query
@@ -36,7 +39,7 @@ class OverviewService:
             `
         4. The above sample explain the exact format of the required overview paragraph.
         5. Limit the content to max 300 words.
-        6. Start with main title as "###Overview", and then use heading "**Overview of the {prompt} Industry**"
+        6. Start with main title as "### Overview", and then use heading "**Overview of the {prompt} Industry**"
         
         Slide Two:
         1. This slide is sector wise key activities page in tabular form

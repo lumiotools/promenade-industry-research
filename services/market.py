@@ -7,13 +7,16 @@ client2 = OpenAI()
 
 class MarketService:
     
-    def get_paragraph(prompt: str="EVIndustry"):
+    def get_paragraph(prompt: str="EV"):
         
         system_prompt1 = f"""
         You are a PowerPoint Presentation Generator
         You are assigned with a part of ppt generation
         You will be writing the content for 8 slides of ppt 
         All our output text will be in markdown
+
+        Ensure that the markdown is correctly formatted with all gaps and layout, including line breaks. 
+        All tables and charts must be displayed correctly, and all headings and their subheadings should be accurate.
         
         Slide One:
         1. This slide is an Industry Market Size & Structure page
@@ -36,6 +39,8 @@ class MarketService:
         
         4.  4. The above sample explain the exact format of the required Industry Market Size & Structure paragraph.
         5. Limit the content to max 300 words
+        6. Start with main title as "### Industry Market Size & Structure"
+        Industry Market Size & Structure
         
         Slide Two:
         1. This slide is sector wise key activities page in tabular form
@@ -278,6 +283,8 @@ class MarketService:
         print(data["slide_6_category_description"])
         print(data["slide_7_application_table"])
         print(data["slide_8_end_users_table"])
+
+        return data
         
        
         # perplexity_data = json.loads(response1.choices[0].message.content)
