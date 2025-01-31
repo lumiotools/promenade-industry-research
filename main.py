@@ -2,10 +2,14 @@ from fastapi import FastAPI
 import uvicorn
 from dotenv import load_dotenv
 load_dotenv()
-from services.overview import OverviewService
-from services.industry_kpi import IndustryKpiService
-from services.challenges import ChallengesService
-from services.market import MarketService
+from services.Overview import OverviewService
+from services.Distribution import DistributionService
+from services.Regulation import RegulationService
+from services.Trends import TrendsService
+from services.IndustryEvolution import IndustryEvolutionService
+from services.ValueChain import ValueChainService 
+from services.CompetitiveLandscape import CompetitiveLandscapeService
+
 app = FastAPI()
 
 @app.get("/")
@@ -14,5 +18,10 @@ async def root():
 
 if __name__ == "__main__":
     # uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
-    MarketService.get_paragraph()
-    
+    OverviewService.get_paragraph()
+    # DistributionService.get_paragraph()
+    # RegulationService.get_paragraph()
+    # TrendsService.get_paragraph()
+    # IndustryEvolutionService.get_evolution_content()
+    # ValueChainService.get_paragraph()
+    # CompetitiveLandscapeService.get_slides()
