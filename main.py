@@ -7,6 +7,8 @@ import re
 import os
 from openai import OpenAI
 import subprocess
+from dotenv import load_dotenv
+load_dotenv()
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -331,16 +333,18 @@ async def generate_presentation(industry: str = Form(...)):
         print("Mardown retrieved")
         
         # Save markdown file
-        markdown_path = f"output/{industry}_presentation.md"
+        markdown_path = f'output/{industry}_presentation.md'
         with open(markdown_path, "w", encoding="utf-8") as f:
             f.write(markdown_content)
 
         print("Markdown saved: " + markdown_path)
         
         # Generate PowerPoint using Marp
-        pptx_path = f"output/{industry}_presentation.pptx"
-        command = f"marp --pptx {markdown_path} -o {pptx_path}"
-        subprocess.run(command, shell=True)
+        pptx_path = f'output/{industry}_presentation.pptx'
+        command = f'marp --pptx "{markdown_path}" -o "{pptx_path}"'
+        output = subprocess.run(command, shell=True)
+        if output.returncode != 0:
+            raise HTTPException(status_code=500, detail="Error generating PowerPoint file.")
 
         print("PPT generated: " + pptx_path)
         
