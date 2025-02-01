@@ -62,7 +62,7 @@ class TrendsService:
         | **Climate and Weather Monitoring** | Advanced satellite technologies are enhancing climate and weather monitoring, providing critical insights for Earth sciences. |
         `
 
-        4. Adapt all content appropriately for the {prompt} industry while maintaining the same structure and format.
+        4. Adapt all content appropriately for the required industry while maintaining the same structure and format.
         """
         
         user_prompt = f"""

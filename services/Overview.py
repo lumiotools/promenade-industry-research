@@ -21,7 +21,7 @@ class OverviewService:
         2. In this page we need to write some paragraphs based on user query
         3. This is the sample Overview Paragraphs for User Query `SpaceTech Industry`:
             `
-            ### Overview of the {prompt} Industry
+            ### Overview of the SpaceTech Industry
 
             The SpaceTech industry is undergoing significant growth and transformation. In 2023, the global space technology market was valued at USD 433.25 billion and is projected to reach USD 700.28 billion by 2030, with a CAGR of 7.1%. This expansion is fueled by technological innovation, increased private sector participation, and enhanced government initiatives.
 
@@ -39,7 +39,7 @@ class OverviewService:
             `
         4. The above sample explain the exact format of the required overview paragraph.
         5. Limit the content to max 300 words.
-        6. Start with main title as "# Overview", and then use heading "### Overview of the {prompt} Industry"
+        6. Start with main title as "# Overview", and then use heading "### Overview of the (Industry_Name) Industry"
         
         Slide Two:
         1. This slide is sector wise key activities page in tabular form

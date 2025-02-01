@@ -20,7 +20,7 @@ class RegulationService:
         2. Start with main title as "# Regulation"
         3. Use this format for the regulatory bodies content:
         `
-        ### {prompt} Industry Regulatory Bodies
+        ### SpaceTech Industry Regulatory Bodies
 
         | Organization | Responsibility |
         | :---- | :---- |
@@ -34,7 +34,7 @@ class RegulationService:
         1. This slide is about key regulations
         2. Use this format for the key regulations content:
         `
-        ### Key Regulations for the {prompt} Industry
+        ### Key Regulations for the SpaceTech Industry
 
         | Policy/Regulation | Description |
         | :---- | :---- |
@@ -52,7 +52,7 @@ class RegulationService:
         1. This slide is about licensing requirements
         2. Use this format for the licensing requirements content:
         `
-        ### Licensing Requirements and Compliance in the {prompt} Industry
+        ### Licensing Requirements and Compliance in the SpaceTechIndustry
 
         **Federal Aviation Administration (FAA)**:
         Vehicle Operator License: Required for launches or re-entries using the same vehicle or family of vehicles.
@@ -70,7 +70,7 @@ class RegulationService:
         **Earth Station License**: Required for ground-based communication with satellites
         `
 
-        4. Adapt all content appropriately for the {prompt} industry while maintaining the same structure and format.
+        4. Adapt all content appropriately for the required industry while maintaining the same structure and format.
         """
         
         user_prompt = f"""

@@ -17,7 +17,7 @@ class DistributionService:
         All tables and charts must be displayed correctly, and all headings and their subheadings should be accurate.
         
         Slide One:
-        1. This slide is about end customers in {prompt}
+        1. This slide is about end customers in SpaceTech Industry
         2. In this page we need to write paragraphs about end customers
         3. This is the sample End Customers content for Distribution:
         `
@@ -30,7 +30,7 @@ class DistributionService:
         | **Commercial Enterprises** | Use space-based technologies for commercial purposes such as satellite communication, internet services, and remote sensing. |
         `
         4. The above sample explains the exact format of the required end customers content.
-        5. Start with main title as "# Distribution in {prompt}" for complete slides. 
+        5. Start with main title as "# Distribution in (Industry_Name)" for complete slides. 
         6. Start the "### End Customers" as a heading (###) to this Slide.
         7. Limit the content to max 200 words
         

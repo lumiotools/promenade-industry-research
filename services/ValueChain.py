@@ -20,9 +20,9 @@ class ValueChainService:
         3. End with a concluding statement about how these segments work together
         4. Use this exact format:
         
-        # {prompt} Industry Value Chain and Operations
+        # SpaceTech Industry Value Chain and Operations
 
-        The {prompt} industry value chain encompasses five key segments: Research and Development (R&D), Manufacturing and Assembly, Launch Services, Satellite Operations, and End-User Support and Services.
+        The SpaceTech industry value chain encompasses five key segments: Research and Development (R&D), Manufacturing and Assembly, Launch Services, Satellite Operations, and End-User Support and Services.
 
         R&D focuses on innovation, concept development, and prototype testing, often in collaboration with academia and governed by regulatory compliance.  
         Manufacturing and assembly involve the production of spacecraft and satellite components, system integration, quality control, and supply chain management.  
