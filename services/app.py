@@ -1,5 +1,6 @@
 from openai import OpenAI
 import json
+import subprocess
 
 client = OpenAI()
 
@@ -106,7 +107,7 @@ section {
 
 # Example usage
 if __name__ == "__main__":
-    prompt = "Food"
+    prompt = "AI"
     presentation_slides = generate_presentation(prompt)
 
     with open(f"{prompt}_slides.json", "w") as json_file:
@@ -119,3 +120,7 @@ if __name__ == "__main__":
     print(f"Slides saved to '{prompt}_slides.txt'")
 
     create_marp_markdown(presentation_slides, prompt)
+
+    command = f"marp --pptx {prompt}_presentation.md -o {prompt}_presentation.pptx"
+    subprocess.run(command, shell=True)
+    print(f"Executed command: {command}")
