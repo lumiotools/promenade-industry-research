@@ -265,13 +265,13 @@ class MarketService:
         
         data = json.loads(response2.choices[0].message.content)
         
-        print(data["market_slide_1_overview_paragraph"])
-        print(data["market_slide_2_sector_wise_key_activities_table"])
-        print(data["market_slide_3_major_segment"])
-        print(data["market_slide_4_market_segment_table"])
-        print(data["market_slide_5_application_table"])
-        print(data["market_slide_6_end_users_table"])
-        print(data["market_slide_7_core_technology"])
+        # print(data["market_slide_1_overview_paragraph"])
+        # print(data["market_slide_2_sector_wise_key_activities_table"])
+        # print(data["market_slide_3_major_segment"])
+        # print(data["market_slide_4_market_segment_table"])
+        # print(data["market_slide_5_application_table"])
+        # print(data["market_slide_6_end_users_table"])
+        # print(data["market_slide_7_core_technology"])
 
         return data
         

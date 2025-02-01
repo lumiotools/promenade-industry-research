@@ -75,6 +75,6 @@ class ChallengesService:
         
         data = json.loads(response.choices[0].message.content)
         
-        print(data["challenges_slide_1_challenges_and_opportunities_paragraph"])
+        # print(data["challenges_slide_1_challenges_and_opportunities_paragraph"])
 
         return data

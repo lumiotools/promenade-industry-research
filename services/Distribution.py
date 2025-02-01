@@ -118,8 +118,8 @@ class DistributionService:
         
         data = json.loads(response.choices[0].message.content)
         
-        print(data["distribution_slide_1_end_customers"])
-        print(data["distribution_slide_2_distribution_models_and_partners"])
-        print(data["distribution_slide_3_emerging_channels"])
+        # print(data["distribution_slide_1_end_customers"])
+        # print(data["distribution_slide_2_distribution_models_and_partners"])
+        # print(data["distribution_slide_3_emerging_channels"])
         
         return data

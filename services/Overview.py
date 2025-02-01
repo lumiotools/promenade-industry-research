@@ -114,9 +114,9 @@ class OverviewService:
         
         data = json.loads(response.choices[0].message.content)
         
-        print(data["overview_slide_1_overview_paragraph"])
-        print(data["overview_slide_2_sector_wise_key_activities_table"])
-        print(data["overview_slide_3_use_cases_table"])
+        # print(data["overview_slide_1_overview_paragraph"])
+        # print(data["overview_slide_2_sector_wise_key_activities_table"])
+        # print(data["overview_slide_3_use_cases_table"])
 
         return data
         

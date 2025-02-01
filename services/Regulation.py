@@ -110,8 +110,8 @@ class RegulationService:
         
         data = json.loads(response.choices[0].message.content)
         
-        print(data["regulation_silde_1_regulatory_bodies"])
-        print(data["regulation_silde_2_key_regulations"])
-        print(data["regulation_silde_3_licensing_requirements"])
+        # print(data["regulation_silde_1_regulatory_bodies"])
+        # print(data["regulation_silde_2_key_regulations"])
+        # print(data["regulation_silde_3_licensing_requirements"])
         
         return data

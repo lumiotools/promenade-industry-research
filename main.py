@@ -323,19 +323,26 @@ async def generate_presentation(industry: str = Form(...)):
         
         # Generate presentation slides using parallel processing
         slides = await PresentationService.generate_presentation(industry)
+        print("Slides generated")
+
         
         # Create markdown with glossary
         markdown_content = await PresentationService.create_markdown(slides, industry)
+        print("Mardown retrieved")
         
         # Save markdown file
         markdown_path = f"output/{industry}_presentation.md"
         with open(markdown_path, "w", encoding="utf-8") as f:
             f.write(markdown_content)
+
+        print("Markdown saved: " + markdown_path)
         
         # Generate PowerPoint using Marp
         pptx_path = f"output/{industry}_presentation.pptx"
         command = f"marp --pptx {markdown_path} -o {pptx_path}"
         subprocess.run(command, shell=True)
+
+        print("PPT generated: " + pptx_path)
         
         # Return PowerPoint file
         if os.path.exists(pptx_path):

@@ -35,40 +35,36 @@ class ValueChainService:
         Generate value chain content for {prompt} industry following the exact format provided
         """
         
-        try:
-            response = client.chat.completions.create(
-                model="gpt-4o-mini",            
-                messages=[
-                    {
-                        "role": "system",
-                        "content": system_prompt
-                    },
-                    {
-                        "role": "user",
-                        "content": user_prompt
-                    }
-                ],
-                response_format={
-                    "type": "json_schema",
-                    "json_schema": {
-                        "name": "value_chain_slide",
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "value_chain_slide_1_value_chain": { "type": "string" }
-                            },
-                            "required": ["value_chain_slide_1_value_chain"],
-                            "additionalProperties": False,
-                        },
-                        "strict": True,
-                    },
+
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",            
+            messages=[
+                {
+                    "role": "system",
+                    "content": system_prompt
+                },
+                {
+                    "role": "user",
+                    "content": user_prompt
                 }
-            )
-            
-            data = json.loads(response.choices[0].message.content)
-            print(data["value_chain_slide_1_value_chain"])
-            return data["value_chain_slide_1_value_chain"]
-            
-        except Exception as e:
-            print(f"Error generating content: {str(e)}")
-            return None
+            ],
+            response_format={
+                "type": "json_schema",
+                "json_schema": {
+                    "name": "value_chain_slide",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "value_chain_slide_1_value_chain": { "type": "string" }
+                        },
+                        "required": ["value_chain_slide_1_value_chain"],
+                        "additionalProperties": False,
+                    },
+                    "strict": True,
+                },
+            }
+        )
+        
+        data = json.loads(response.choices[0].message.content)
+        # print(data["value_chain_slide_1_value_chain"])
+        return data["value_chain_slide_1_value_chain"]

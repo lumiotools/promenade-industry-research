@@ -89,8 +89,8 @@ class IndustryEvolutionService:
         
         data = json.loads(response.choices[0].message.content)
         
-        print(data["industry_evolution_slide_1_evolution_overview"])
-        print(data["industry_evolution_slide_2_timeline"])
-        print(data["industry_evolution_slide_3_future_trends"])
+        # print(data["industry_evolution_slide_1_evolution_overview"])
+        # print(data["industry_evolution_slide_2_timeline"])
+        # print(data["industry_evolution_slide_3_future_trends"])
         
         return data

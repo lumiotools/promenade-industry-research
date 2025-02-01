@@ -102,8 +102,8 @@ class TrendsService:
         
         data = json.loads(response.choices[0].message.content)
         
-        print(data["trends_slide_1_recent_trends"])
-        print(data["trends_slide_2_expansion_services"])
-        print(data["trends_slide_3_industry_categories"])
+        # print(data["trends_slide_1_recent_trends"])
+        # print(data["trends_slide_2_expansion_services"])
+        # print(data["trends_slide_3_industry_categories"])
         
         return data

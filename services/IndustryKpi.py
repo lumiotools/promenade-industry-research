@@ -90,6 +90,6 @@ class IndustryKpiService:
         
         data = json.loads(response.choices[0].message.content)
         
-        print(data["industry_kpi_slide_1_industry_kpi_table"]);
+        # print(data["industry_kpi_slide_1_industry_kpi_table"])
 
         return data

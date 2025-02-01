@@ -88,7 +88,7 @@ class CompetitiveLandscapeService:
         
         data = json.loads(response.choices[0].message.content)
         
-        print(data["competitive_landscape_slide_1_overview"])
-        print(data["competitive_landscape_slide_2_factors"])
+        # print(data["competitive_landscape_slide_1_overview"])
+        # print(data["competitive_landscape_slide_2_factors"])
         
         return data
