@@ -1,6 +1,8 @@
 from fastapi import FastAPI, HTTPException, Form
 from fastapi.responses import FileResponse, HTMLResponse
 from pydantic import BaseModel
+import asyncio
+from concurrent.futures import ThreadPoolExecutor
 import re
 import os
 from openai import OpenAI
@@ -105,7 +107,14 @@ class GlossaryService:
 
 class PresentationService:
     @staticmethod
-    def create_markdown(slides: list, industry: str, include_glossary: bool = True) -> str:
+    async def run_service(service_func, *args):
+        """Run a service function in a thread pool."""
+        loop = asyncio.get_event_loop()
+        with ThreadPoolExecutor() as pool:
+            return await loop.run_in_executor(pool, service_func, *args)
+
+    @staticmethod
+    async def create_markdown(slides: list, industry: str, include_glossary: bool = True) -> str:
         """Create markdown content for the presentation."""
         try:
             markdown_content = """---
@@ -165,25 +174,33 @@ h1 {
             raise HTTPException(status_code=500, detail=f"Error creating markdown: {str(e)}")
 
     @staticmethod
-    def generate_presentation(industry: str) -> list:
-        """Generate all presentation slides."""
+    async def generate_presentation(industry: str) -> list:
+        """Generate all presentation slides in parallel."""
         try:
-            slides = []
+            # Create tasks for all services
+            tasks = [
+                PresentationService.run_service(OverviewService.get_paragraph, industry),
+                PresentationService.run_service(MarketService.get_paragraph, industry),
+                PresentationService.run_service(IndustryEvolutionService.get_evolution_content, industry),
+                PresentationService.run_service(CompetitiveLandscapeService.get_slides, industry),
+                PresentationService.run_service(ValueChainService.get_paragraph, industry),
+                PresentationService.run_service(DistributionService.get_paragraph, industry),
+                PresentationService.run_service(ChallengesService.get_paragraph, industry),
+                PresentationService.run_service(IndustryKpiService.generate_tabular, industry),
+                PresentationService.run_service(RegulationService.get_paragraph, industry),
+                PresentationService.run_service(TrendsService.get_paragraph, industry)
+            ]
+
+            # Wait for all tasks to complete
+            results = await asyncio.gather(*tasks)
             
-            # Generate content from all services
-            overview_data = OverviewService.get_paragraph(industry)
-            market_data = MarketService.get_paragraph(industry)
-            evolution_data = IndustryEvolutionService.get_evolution_content(industry)
-            competitive_data = CompetitiveLandscapeService.get_slides(industry)
-            value_chain_data = ValueChainService.get_paragraph(industry)
-            distribution_data = DistributionService.get_paragraph(industry)
-            challenges_data = ChallengesService.get_paragraph(industry)
-            kpi_data = IndustryKpiService.generate_tabular(industry)
-            regulation_data = RegulationService.get_paragraph(industry)
-            trends_data = TrendsService.get_paragraph(industry)
-            
-            # Add slides in order
-            slides.extend([
+            # Unpack results
+            [overview_data, market_data, evolution_data, competitive_data,
+             value_chain_data, distribution_data, challenges_data, kpi_data,
+             regulation_data, trends_data] = results
+
+            # Create slides list in the same order as before
+            slides = [
                 overview_data["overview_slide_1_overview_paragraph"],
                 overview_data["overview_slide_2_sector_wise_key_activities_table"],
                 overview_data["overview_slide_3_use_cases_table"],
@@ -210,7 +227,7 @@ h1 {
                 trends_data["trends_slide_1_recent_trends"],
                 trends_data["trends_slide_2_expansion_services"],
                 trends_data["trends_slide_3_industry_categories"]
-            ])
+            ]
             
             return slides
             
@@ -293,7 +310,7 @@ async def serve_form():
     </html>
     """
 
-# Update the PowerPoint generation logic
+# Update the endpoint to use async/await
 @app.post("/generate-presentation")
 async def generate_presentation(industry: str = Form(...)):
     """
@@ -304,11 +321,11 @@ async def generate_presentation(industry: str = Form(...)):
         # Create output directory if it doesn't exist
         os.makedirs("output", exist_ok=True)
         
-        # Generate presentation slides using the existing logic
-        slides = PresentationService.generate_presentation(industry)
+        # Generate presentation slides using parallel processing
+        slides = await PresentationService.generate_presentation(industry)
         
         # Create markdown with glossary
-        markdown_content = PresentationService.create_markdown(slides, industry)
+        markdown_content = await PresentationService.create_markdown(slides, industry)
         
         # Save markdown file
         markdown_path = f"output/{industry}_presentation.md"
